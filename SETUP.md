@@ -12,7 +12,7 @@ cp .env.example .env
 
 # Keep this in .env:
 DEBUG=True
-SECRET_KEY=anything-you-want
+SECRET_KEY=jtj=+p-&-@k3!kce623)^!4g$-0w&1$drcgyklq3&xiinu0$_n
 
 # Install dependencies (one time)
 pip install -r requirements.txt
