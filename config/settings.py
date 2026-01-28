@@ -36,7 +36,12 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-f+nyn7kt4rnzo1cvptd!5pjf-=t4#zg0@43_^)x39xfrd+$wfg')
 
 # Allowed hosts configuration
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = [
+    "hrms-assesment-ghrr.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
 
 # ==========================================
 # SECURITY SETTINGS
