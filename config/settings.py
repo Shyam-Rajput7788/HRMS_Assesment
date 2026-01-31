@@ -35,12 +35,8 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-f+nyn7kt4rnzo1cvptd!5pjf-=t4#zg0@43_^)x39xfrd+$wfg')
 
-# Allowed hosts configuration
-ALLOWED_HOSTS = [
-    "hrms-assesment-ghrr.onrender.com",
-    "localhost",
-    "127.0.0.1",
-]
+# Allowed hosts configuration (driven by env)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='hrms-assesment-ghrr.onrender.com,localhost,127.0.0.1').split(',')
 
 
 # ==========================================
@@ -53,6 +49,8 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    # Use WhiteNoise storage backend for compressed, cacheable static files
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # ==========================================
 # Application definition
